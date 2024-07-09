@@ -6,9 +6,9 @@
 
 ## Domain and business concepts
 
-When dealing with business projects, we can "depare" with specific jargons. From this, we have the ubiquitous language
+When dealing with business projects, we can come across specific jargons. From this, we have the ubiquitous language
 
-> Ubiquitous language for this case
+> **Ubiquitous language for this case**
 
 - SKU (stock-keeping-unit): identification of a product (in practice, the product name)
 
@@ -39,18 +39,23 @@ When dealing with business projects, we can "depare" with specific jargons. From
 >
 > task.
 
+**Value Objects and Entities**
+
+An order line is uniquely identified by its order ID, SKU, and quantity; if we change one of those values, we now have a new line. That’s the definition of a value object: any object that is identified only by its data and doesn’t have a long-lived identity. What about a batch, though? That is identified by a reference.
+
+We use the term entity to describe a domain object that has long-lived identity. On the previous page, we introduced a Name class as a value object. If we take the name Harry Percival and change one letter, we have the ne
 
 
 <p>
-
->(at firsy glance, looks kinda crazy and contraintuituve the ideia of developing the test before the underlying code, but when applied, we have to admit: it's a very clever approach)🤪
-
+(at first glance, looks kinda crazy and contraintuituve the ideia of developing the test before the underlying code, but when applied, we have to admit: it's a very clever approach)🤪
+</p>
 
 ### Conceptual explanations
 
 #### using_property_decorator
 <details>
     <summary>What's @property decorator</summary>
+    
     The @property decorator is a built-in construct in Python that provides a concise way to define properties in classes. It essentially creates a getter method that behaves like an attribute when accessed. Here's a breakdown of its functionality:
 
     Functionality:
@@ -59,4 +64,10 @@ When dealing with business projects, we can "depare" with specific jargons. From
 
     Getters and Setters (Optional): The @property decorator can also be used in conjunction with the @setter.setter and @deleter.deleter decorators to define setter and deleter methods for the property. These methods control how the property's value can be set and deleted, respectively.
 
+</details>
+
+#### idempotence_definition
+<details>
+    <summary>Idempotence</summary>
+    Idempotence is a property of certain operations or actions that ensures they can be applied multiple times without changing the outcome, beyond the initial application. In simpler terms, performing an idempotent operation multiple times has the same effect as performing it just once.
 </details>
