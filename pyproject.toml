@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "tdd-project"
+name = "TDD_project"
 version = "0.1.0"
 description = "Practical application of TDD Pattern according to Architecture Patterns with Python case"
 authors = ["Giulia Ribeiro de Carvalho"]
@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 pytest = "^8.2.2"
+sphinx = "^7.3.7"
 
 
 [build-system]

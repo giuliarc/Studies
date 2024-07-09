@@ -28,7 +28,7 @@ When dealing with business projects, we can "depare" with specific jargons. From
 - We can't allocate the same line twice (test-case)
 - We will face scenarios like - batches have an *ETA* if they are currently shipping, or they may be in *warehouse*
 
-<div style="background-color:rgba(128, 0, 0, 1);">
+
 > So, from the gathered basic functional requisits of 
 >
 > our business, we start writing our tests that assures 
@@ -38,9 +38,25 @@ When dealing with business projects, we can "depare" with specific jargons. From
 > write the underlying code responsible for doing the 
 >
 > task.
-<div style="background-color:rgba(128, 0, 0, 1);">
+
 
 
 <p>
 
 >(at firsy glance, looks kinda crazy and contraintuituve the ideia of developing the test before the underlying code, but when applied, we have to admit: it's a very clever approach)🤪
+
+
+### Conceptual explanations
+
+#### using_property_decorator
+<details>
+    <summary>What's @property decorator</summary>
+    The @property decorator is a built-in construct in Python that provides a concise way to define properties in classes. It essentially creates a getter method that behaves like an attribute when accessed. Here's a breakdown of its functionality:
+
+    Functionality:
+
+    Transforms a Method into an Attribute: When you apply @property to a method within a class, it alters how that method is invoked. Instead of calling it like a regular method with parentheses, you can access it directly using dot notation, just like an attribute.
+
+    Getters and Setters (Optional): The @property decorator can also be used in conjunction with the @setter.setter and @deleter.deleter decorators to define setter and deleter methods for the property. These methods control how the property's value can be set and deleted, respectively.
+
+</details>
