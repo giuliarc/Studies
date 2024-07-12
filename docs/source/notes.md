@@ -28,6 +28,8 @@ When dealing with business projects, we can come across specific jargons. From t
 - We can't allocate the same line twice (test-case)
 - We will face scenarios like - batches have an *ETA* if they are currently shipping, or they may be in *warehouse*
 
+![UML Model ](image.png)
+
 
 > So, from the gathered basic functional requisits of 
 >
@@ -71,3 +73,69 @@ We use the term entity to describe a domain object that has long-lived identity.
     <summary>Idempotence</summary>
     Idempotence is a property of certain operations or actions that ensures they can be applied multiple times without changing the outcome, beyond the initial application. In simpler terms, performing an idempotent operation multiple times has the same effect as performing it just once.
 </details>
+
+#### using_dataclasses
+<details>
+    <summary>Dataclasses</summary>
+    Whenever we have a business concept that has data but no identity, we often choose to represent it using the *Value Object* pattern. A value object is any domain objet that is uniquely identified by the data it holds; we usually make them immutable:
+
+<code>
+    @dataclass(frozen=True)
+    class OrderLine:
+        orderid: OrderReference
+        sku: ProductReference
+        qty: Quantity
+</code>
+</details>
+<br>
+
+>
+>**Value Object**<br>
+>Any object is identified only by its data and doesn't have a long-lived identity (ex: order lines)
+>
+>**Entity**<br>
+> A domain object that has long-lived identity (ex: individual (people) identity)
+>
+> Entities, unlike values, have *identity equality*. We can change their values, but they still recognizable
+
+
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+    DO NOT MODIFY <code>__hash__</code>
+    WITHOUT ALSO MODIFYING <code>__eq__</code>.     
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+
+**Not everything has to be an Object (here we go): DOMAIN SERVICE**
+
+Domain Service operations don't have a natural home in an entity or value object.
+A "thing" that allocates and *order line*, given a set of *batches*, sounds like a function.<br>
+:sparkles: Let's make a function! :sparkles:
+
+NEXT and SORTED works together to find the first suitable batch, instead of listing and search between all of them<br>
+:elephant: *memory efficiency* :elephant:
+
+**Domain Modeling Recap (in my words)**
+
+- Domain modeling:
+  - Is the closest part to the business. More likely to change. Make it easy to understand and modify
+  
+- Distinguish entities from value objects
+  - Value object: defined by its attributes. Best when immutable (different attribute = different object)
+  - Entity: attributes may vary, but still being the same entity (usually has a name or reference)
+
+- Not everything has to be an object
+  - Let the verbs be functions! (Instead of a BarBuilder, what about a build_bar()?)
+
+- Time to apply your best OO design principles
+  - HA HA HA HA HA HA :joy:
+  - SOLID *e os caramba*
