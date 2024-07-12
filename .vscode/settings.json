@@ -1,0 +1,10 @@
+{
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
+    "makefile.makefilePath": "C:\\Users\\giuli\\OneDrive\\Documentos\\Giulia\\architecture_patterns_with_python\\TDD_project\\docs\\Makefile",
+    "makefile.makePath": "C:\\Users\\giuli\\OneDrive\\Documentos\\Giulia\\architecture_patterns_with_python\\TDD_project\\docs\\make.bat"
+}
