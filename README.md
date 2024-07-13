@@ -139,3 +139,21 @@ NEXT and SORTED works together to find the first suitable batch, instead of list
 - Time to apply your best OO design principles
   - HA HA HA HA HA HA :joy:
   - SOLID *e os caramba*
+
+**Chapter 2: Repository Pattern**
+
+Sits between our domain model and the database
+
+Layered architecture
+
+Presentation Layer -> Business Logic -> Database Layer
+
+Onion architecture
+
+Presentation Layer -> Domain Model <- Database Layer
+
+:sparkles: Boil down to the dependency inversion principle: high-lever modules (the domain) should not depend on low-level ones (the infrastructure) :sparkles:
+
+We are not going to make a "declarative" code for ORM use.
+We will use "classical mapping", where ORM depends on model
+  - Declare an explicit *mapper*
