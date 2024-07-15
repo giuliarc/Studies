@@ -157,3 +157,12 @@ Presentation Layer -> Domain Model <- Database Layer
 We are not going to make a "declarative" code for ORM use.
 We will use "classical mapping", where ORM depends on model
   - Declare an explicit *mapper*
+
+With SQLAlchemy we can use *alembic* https://alembic.sqlalchemy.org/en/latest/
+
+About repository pattern: even though our objects are in memory, we need to put them somewhere so we can find them again.
+The core methods are **add()** and **get()**. We can define them in our abstract base class
+
+:pushpin: We will have to write in our repository class each time we add a new domain object that we want to retrieve
+
+:bulb: **The repository pattern would make it easy to make fundamental changes to the way we store things**
